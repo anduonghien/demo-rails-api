@@ -1,5 +1,8 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :new_function, :custom_key, :method_custom_in_model
+  # attributes :id, :title, :new_function, :custom_key, :method_custom_in_model
+  attributes :id, :title
+
+  has_many :comments
 
   # custom key for version < 0.10.0 
   def custom_key
