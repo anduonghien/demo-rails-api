@@ -1,0 +1,3 @@
+== README
+
+This is demo Rails api using rails-api and active_model_serializers
