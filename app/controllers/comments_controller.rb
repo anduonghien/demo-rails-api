@@ -2,11 +2,17 @@ class CommentsController < ApplicationController
   def index
     @comments = 
       if params[:post_id]
-        Post.find(params[:post_id]).comments
+        Post.find_by_id(params[:post_id]).try(:comments)
       else
         Comment.all
       end
-    render json: @comments
+    result = 
+      if @comments.present?
+        Response.success(@comments)
+      else
+        Response.error("Not exits")
+      end
+    render json: result
   end
 
   def show
