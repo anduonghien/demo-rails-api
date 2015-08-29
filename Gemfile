@@ -10,6 +10,8 @@ gem 'spring', :group => :development
 
 gem 'mysql2'
 
+gem 'active_model_serializers'
+
 group :development do
   gem 'pry'
   gem 'pry-rails'
